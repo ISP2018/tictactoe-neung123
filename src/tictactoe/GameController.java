@@ -22,12 +22,17 @@ public class GameController {
 	private Button newGameButton;
 	
 	private TicTacToeGame game;
-	
 
+	/**
+	 * A method for initialize things when create GameController class.
+	 */
 	public GameController() {
-		// nothing to iniitialize yet.
+		// nothing to initialize yet.
 	}
-	
+
+	/**
+	 * Initialize things in javaFX and other for the game.
+	 */
 	@FXML
 	public void initialize() {
 		game = new TicTacToeGame(3);
@@ -48,7 +53,10 @@ public class GameController {
 		
 		updateGameStatus();
 	}
-	
+
+	/**
+	 * Update a game status when has a winner or draw.
+	 */
 	private void updateGameStatus() {
 		Player winner = game.winner();
 		if (winner != Player.NONE) topLabel.setText("Player "+winner+" wins!");

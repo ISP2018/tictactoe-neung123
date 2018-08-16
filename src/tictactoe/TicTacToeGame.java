@@ -7,7 +7,12 @@ import javafx.beans.property.Property;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.Node;
 
-
+/**
+ * A class for tic-tac-toe game.
+ * Include all game logic.
+ *
+ * @author jim
+ */
 public class TicTacToeGame {
 	private final int boardsize;
 	/** View of the TicTacToe board. */
@@ -18,7 +23,13 @@ public class TicTacToeGame {
 	private SimpleBooleanProperty gameOver;
 	
 	private Player nextPlayer = Player.X;
-	
+
+	/**
+	 * Initialize a tic-tac-toe game.
+	 *
+	 * @param size number of the row-column
+	 *                of a tic-tac-toe game.
+	 */
 	public TicTacToeGame(int size) {
 		this.boardsize = size;
 		board = new Board(boardsize,boardsize);   // view of the gameboard
@@ -26,11 +37,17 @@ public class TicTacToeGame {
 		gameOver = new SimpleBooleanProperty(false);
 		startNewGame();
 	}
-	
+
+	/**
+	 * Get the current tic-tac-toe board.
+	 */
 	public Board getBoard() {
 		return board;
 	}
-	
+
+	/**
+	 * A method for create a new tic-tac-toe game.
+	 */
 	public void startNewGame() {
 		// Avoid nulls. Assign a "none" object to each location on the board.
 		for(int row=0; row<3; row++) 
