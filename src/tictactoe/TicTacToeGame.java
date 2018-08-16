@@ -79,7 +79,7 @@ public class TicTacToeGame {
 	 */
 	public void moveTo(Piece piece, int col, int row) {
 		assert canMoveTo(piece.type, col, row): 
-			String.format("moveTo(%s,%d,%d) is invalid",piece.toString(),row,col);
+			String.format("moveTo(%s,%d,%d) is invalid", piece.toString(), row, col);
 		if (! canMoveTo(piece.type, col, row) ) return; // not reached when assertions enabled
 		pieces[row][col] = piece;
 		board.add(piece, col, row); // GridPane.add has column param before row param
