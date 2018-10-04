@@ -1,3 +1,2 @@
-[submodule "tictactoe"]
-	path = tictactoe
-	url = https://github.com/neung123/tictactoe
+[submodule "test"]
+	path = test	url = https://github.com/neung123/tictactoe
