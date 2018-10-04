@@ -57,7 +57,7 @@
 
     <!-- compile the source code -->
     <target name="compile" depends="init" description="Compile source code" >
-        <javac srcdir="src" destdir="bin" includeantruntime="false" />
+        <javac srcdir="${src.dir}" destdir="bin" includeantruntime="false" />
     </target>
 
     <!-- compile the test code -->
@@ -85,13 +85,13 @@
     <!-- create jar the source code -->
     <target name="jar" depends="compile">
         <mkdir dir="dist"/>
-        <jar destfile="dist/TicTacToe.jar" basedir="bin">
+        <jar destfile="dist/TicTacToe.jar" basedir="${build.dir}">
             <manifest>
-                <attribute name="Main-Class" value="src/tictactoe/Main"/>
+                <attribute name="Main-Class" value="tictactoe.Main"/>
             </manifest>
         </jar>
         <copy todir="destination dir">
-            <fileset dir="src">
+            <fileset dir="${src.dir}">
                 <include name="**/*.fxml" />
             </fileset>
         </copy>
